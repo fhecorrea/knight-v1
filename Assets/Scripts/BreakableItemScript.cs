@@ -8,14 +8,16 @@ public class BreakableItemScript : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider2d;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
         anim = GetComponent<Animator>();
         boxCollider2d = GetComponent<BoxCollider2D>();
-
+    }
+    void Update()
+    {
         anim.SetInteger("hp", hp);
-        if (hp  < 1 && boxCollider2d.isTrigger == false) {
+        if (hp < 1 && boxCollider2d.isTrigger == false)
+        {
             boxCollider2d.isTrigger = true;
         }
     }
